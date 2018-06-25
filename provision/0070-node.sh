@@ -14,3 +14,5 @@ PATH=/usr/java-env/node/latest/bin:$PATH
 export PATH
 ' > /etc/profile.d/node.sh
 
+. /etc/profile.d/node.sh
+

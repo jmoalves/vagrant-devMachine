@@ -18,3 +18,5 @@ PATH=$JAVA_HOME/bin:$PATH
 export JAVA_HOME PATH
 ' > /etc/profile.d/java.sh
 
+. /etc/profile.d/java.sh
+

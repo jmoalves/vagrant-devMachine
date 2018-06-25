@@ -16,3 +16,5 @@ PATH=/usr/java-env/ide/eclipse/latest:$PATH
 export PATH
 ' > /etc/profile.d/eclipse.sh
 
+. /etc/profile.d/eclipse.sh
+

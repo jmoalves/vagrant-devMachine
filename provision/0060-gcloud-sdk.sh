@@ -10,5 +10,5 @@ echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee 
 curl -L https://packages.cloud.google.com/apt/doc/apt-key.gpg 2>/dev/null | sudo apt-key add -
 
 # Update the package list and install the Cloud SDK
-sudo apt-get update && sudo apt-get install google-cloud-sdk
+sudo apt-get update -y && sudo apt-get install -y google-cloud-sdk
 

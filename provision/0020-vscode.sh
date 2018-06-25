@@ -1,4 +1,3 @@
-# vscode
 echo === VSCode
 curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o /tmp/vscode.deb 
 sudo apt-get install -y /tmp/vscode.deb libgtk2.0-0 libxss1 libasound2

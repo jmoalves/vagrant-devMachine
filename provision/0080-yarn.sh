@@ -14,3 +14,5 @@ PATH=/usr/java-env/yarn/latest/bin:$PATH
 export PATH
 ' > /etc/profile.d/yarn.sh
 
+. /etc/profile.d/yarn.sh
+
