@@ -10,7 +10,7 @@ vagrant up
 vagrant ssh
 ```
 
-You may want to add the ``vagrant`` user ssh key to your git repository of choice. The ``Vagrantfile`` creates on at the end.
+You may want to add the ``vagrant`` user ssh key to your git repository of choice. The ``Vagrantfile`` creates one at the end.
 
 What's inside?
 --------------
