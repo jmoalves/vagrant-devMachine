@@ -38,3 +38,17 @@ All the items are listed in the ``provision`` directory. Here follows a sample l
 I've used an ``ubuntu-bionic64`` machine as base. I've also choose the ``VirtualBox`` provider.
 
 However, it should be easy to change these choices. I plan to test it using AWS provider.
+
+BEWARE: Backup
+--------------
+
+If it will be your development machine, it is important to backup your files.
+
+I've assumed the following premises:
+* We should work inside the virtual machine, as isolated as possible from host machine;
+* The ``Vagrantfile`` represents completelly the machine configuration;
+* The development files will be source files that can be found in their git repositories.
+
+With these premises in mind, you just need to backup the ``/home/vagrant`` folder once in a while.
+
+For this purpose, there is a ``/backup`` directory inside the guest machine mapped to ``backup/`` directory inside the ``Vagrantfile`` workdir. We also have a cron job running ``rsync`` every hour.
