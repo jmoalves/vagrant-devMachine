@@ -1,9 +1,16 @@
 # vagrant-devMachine
 A opinionated development machine, using vagrant + ubuntu
 
+Prerequisites
+-------------
+
+Before using this ``Vagrantfile``, you must install some tools:
+* Vagrant
+* VirtualBox
+
 Usage
 -----
-After clonig this repository, you should issue the commands below:
+After cloning this repository, you should issue the commands below:
 
 ```
 vagrant up
