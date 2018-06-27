@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
 		vb.customize ["modifyvm", :id, "--cpus", 3]
 	end
 	config.vm.provision "shell", inline: <<-SCRIPT
+		sudo timedatectl set-timezone America/Sao_Paulo
 		sudo apt-get -y install language-pack-pt
 		sudo apt-get -y update
 		sudo apt-get -y upgrade
