@@ -52,3 +52,11 @@ I've assumed the following premises:
 With these premises in mind, you just need to backup the ``/home/vagrant`` folder once in a while.
 
 For this purpose, there is a ``/backup`` directory inside the guest machine mapped to ``backup/`` directory inside the ``Vagrantfile`` workdir. We also have a cron job running ``rsync`` every hour.
+
+Explaining some decisions
+-------------------------
+
+### Public network
+I choose the public network because the testing process is easier. Otherwise, the dev machine would have to forward some ports for the running applications.
+
+However, keep in mind that vagrant machines are unsecure by nature. Don't expose them to the real world. Make them public but inside your protected network.
