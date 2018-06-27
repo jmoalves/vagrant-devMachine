@@ -12,6 +12,9 @@ cd -
 echo '#!/bin/bash
 PATH=/usr/java-env/yarn/latest/bin:$PATH
 export PATH
+
+PATH=$( yarn global bin ):$PATH
+export PATH
 ' > /etc/profile.d/yarn.sh
 
 . /etc/profile.d/yarn.sh
