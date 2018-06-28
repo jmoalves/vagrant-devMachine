@@ -7,7 +7,7 @@ curl -L $url 2> /dev/null | tar xJ -C /usr/java-env/node
 
 cd /usr/java-env/node
 ln -s $( ls -1d node-* | tail -1 ) latest
-cd -
+cd - > /dev/null
 
 echo '#!/bin/bash
 PATH=/usr/java-env/node/latest/bin:$PATH
@@ -15,4 +15,3 @@ export PATH
 ' > /etc/profile.d/node.sh
 
 . /etc/profile.d/node.sh
-

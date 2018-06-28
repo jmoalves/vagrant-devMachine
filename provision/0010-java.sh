@@ -10,7 +10,7 @@ curl -L -b "oraclelicense=a" $url 2> /dev/null | tar xz -C /usr/java-env/jdk
 
 cd /usr/java-env/jdk
 ln -s $( ls -1d jdk1.8* | tail -1 ) latest
-cd -
+cd - > /dev/null
 
 echo '#!/bin/bash
 JAVA_HOME=/usr/java-env/jdk/latest
@@ -19,4 +19,3 @@ export JAVA_HOME PATH
 ' > /etc/profile.d/java.sh
 
 . /etc/profile.d/java.sh
-

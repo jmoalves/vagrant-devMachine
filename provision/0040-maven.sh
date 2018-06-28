@@ -6,7 +6,7 @@ curl -L $url 2> /dev/null | tar xz -C /usr/java-env/maven
 
 cd /usr/java-env/maven
 ln -s $( ls -1d apache-maven-* | tail -1 ) latest
-cd -
+cd - > /dev/null
 
 echo '#!/bin/bash
 MAVEN_HOME=/usr/java-env/maven/latest
@@ -15,4 +15,3 @@ export MAVEN_HOME PATH
 ' > /etc/profile.d/maven.sh
 
 . /etc/profile.d/maven.sh
-
