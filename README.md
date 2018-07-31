@@ -35,7 +35,7 @@ All the items are listed in the ``provision`` directory. Here follows a sample l
 * Yarn
 * Ionic (+ Cordova)
 
-I've used an ``ubuntu-bionic64`` machine as base. I've also choose the ``VirtualBox`` provider.
+I've used an ``ubuntu-bionic64`` machine as base. I've also chosen the ``VirtualBox`` provider.
 
 However, it should be easy to change these choices. I plan to test it using AWS provider.
 
