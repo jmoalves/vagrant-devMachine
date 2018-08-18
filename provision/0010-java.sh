@@ -1,10 +1,12 @@
-version=8u172
-build=b11
+version=8u181
+build=b13
+sessionId=96a7b8442fe848ef90c96a2fad6ed6d1
 
 ## Oracle Java
 mkdir -p /usr/java-env/jdk
 
-url=https://edelivery.oracle.com/otn-pub/java/jdk/$version-$build/a58eab1ec242421181065cdc37240b08/jdk-$version-linux-x64.tar.gz
+url=https://edelivery.oracle.com/otn-pub/java/jdk/$version-$build/$sessionId/jdk-$version-linux-x64.tar.gz
+
 echo === JAVA - $url
 curl -L -b "oraclelicense=a" $url 2> /dev/null | tar xz -C /usr/java-env/jdk
 

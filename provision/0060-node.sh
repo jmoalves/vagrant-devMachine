@@ -1,4 +1,4 @@
-url=https://nodejs.org/dist/v8.11.3/node-v8.11.3-linux-x64.tar.xz
+url=https://nodejs.org/dist/v8.11.4/node-v8.11.4-linux-x64.tar.xz
 
 echo === Node - $url
 mkdir -p /usr/java-env/node

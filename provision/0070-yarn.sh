@@ -1,4 +1,4 @@
-url=https://github.com/yarnpkg/yarn/releases/download/v1.7.0/yarn-v1.7.0.tar.gz
+url=https://github.com/yarnpkg/yarn/releases/download/v1.9.4/yarn-v1.9.4.tar.gz
 
 echo === Yarn - $url
 mkdir -p /usr/java-env/yarn
