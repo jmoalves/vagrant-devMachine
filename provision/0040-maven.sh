@@ -1,4 +1,5 @@
-url=http://ftp.unicamp.br/pub/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+url=https://www-us.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
+
 echo === Maven - $url
 
 mkdir -p /usr/java-env/maven
