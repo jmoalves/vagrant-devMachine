@@ -1,11 +1,11 @@
 Vagrant.configure("2") do |config|
 	config.vm.box = "ubuntu/bionic64"
 
-	if Vagrant.has_plugin?("vagrant-proxyconf")
-		config.proxy.http     = "http://192.168.15.108:3128/"
-		config.proxy.https    = "http://192.168.15.108:3128/"
-		config.proxy.no_proxy = "localhost,127.0.0.1,192.168.15.*"
-	end
+	#if Vagrant.has_plugin?("vagrant-proxyconf")
+	#	config.proxy.http     = "http://192.168.15.108:3128/"
+	#	config.proxy.https    = "http://192.168.15.108:3128/"
+	#	config.proxy.no_proxy = "localhost,127.0.0.1,192.168.15.*"
+	#end
 
   	config.vm.network "public_network"
 	config.ssh.forward_x11 = true
