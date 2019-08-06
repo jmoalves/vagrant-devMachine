@@ -1,6 +1,6 @@
-version=8u181
-build=b13
-sessionId=96a7b8442fe848ef90c96a2fad6ed6d1
+version=8u221
+build=b11
+sessionId=230deb18db3e4014bb8e3e8324f81b43
 
 ## Oracle Java
 mkdir -p /usr/java-env/jdk
