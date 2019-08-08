@@ -5,7 +5,7 @@ Prerequisites
 -------------
 
 Before using this ``Vagrantfile``, you must install some tools:
-* Vagrant
+* Vagrant (with vagrant-vbguest plugin)
 * VirtualBox
 
 Usage
