@@ -25,7 +25,7 @@ What's inside?
 I've create this machine to be my primary development machine.
 
 All the items are listed in the ``provision`` directory. Here follows a sample list:
-* Oracle Java SE JDK 1.8
+* Java SE JDK 11
 * Visual Studio Code
 * Eclipse Java EE Edition
 * Maven
@@ -33,7 +33,7 @@ All the items are listed in the ``provision`` directory. Here follows a sample l
 * Google Cloud SDK
 * Node.js
 * Yarn
-* Ionic (+ Cordova)
+* Ionic
 
 I've used an ``ubuntu-bionic64`` machine as base. I've also chosen the ``VirtualBox`` provider.
 
