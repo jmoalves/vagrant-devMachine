@@ -1,4 +1,3 @@
 echo === Ionic
-sudo -iu vagrant yarn global add ionic cordova
+sudo npm install -g ionic cordova
 
-sudo -iu vagrant ionic config set -g yarn true
