@@ -1,3 +1,5 @@
+#/bin/bash
+
 echo === VSCode
 curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o /tmp/vscode.deb 2>/dev/null
 sudo apt-get update

@@ -1,16 +1,19 @@
-url=https://github.com/yarnpkg/yarn/releases/download/v1.9.4/yarn-v1.9.4.tar.gz
+#!/bin/bash
+
+version=1.17.3
+url=https://github.com/yarnpkg/yarn/releases/download/v$version/yarn-v$version.tar.gz
 
 echo === Yarn - $url
-mkdir -p /usr/java-env/yarn
+mkdir -p /usr/lib/yarn
 
-curl -L $url 2> /dev/null | tar xz -C /usr/java-env/yarn
+curl -L $url 2> /dev/null | tar xz -C /usr/lib/yarn
 
-cd /usr/java-env/yarn
+cd /usr/lib/yarn
 ln -s $( ls -1d yarn-* | tail -1 ) latest
 cd - > /dev/null
 
 echo '#!/bin/bash
-PATH=/usr/java-env/yarn/latest/bin:$PATH
+PATH=/usr/lib/yarn/latest/bin:$PATH
 export PATH
 
 PATH=$( yarn global bin ):$PATH

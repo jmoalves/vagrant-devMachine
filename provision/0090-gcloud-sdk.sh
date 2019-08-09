@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo === Google Cloud SDK
 
 # Create environment variable for correct distribution

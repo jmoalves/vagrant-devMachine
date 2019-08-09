@@ -1,16 +1,20 @@
-url=https://nodejs.org/dist/v8.11.4/node-v8.11.4-linux-x64.tar.xz
+#!/bin/bash
+
+version=10.16.2
+
+url=https://nodejs.org/dist/v$version/node-v$version-linux-x64.tar.xz
 
 echo === Node - $url
-mkdir -p /usr/java-env/node
+mkdir -p /usr/lib/node
 
-curl -L $url 2> /dev/null | tar xJ -C /usr/java-env/node
+curl -L $url 2> /dev/null | tar xJ -C /usr/lib/node
 
-cd /usr/java-env/node
+cd /usr/lib/node
 ln -s $( ls -1d node-* | tail -1 ) latest
 cd - > /dev/null
 
 echo '#!/bin/bash
-PATH=/usr/java-env/node/latest/bin:$PATH
+PATH=/usr/lib/node/latest/bin:$PATH
 export PATH
 ' > /etc/profile.d/node.sh
 
