@@ -27,6 +27,9 @@ Vagrant.configure("2") do |config|
 		echo
 		echo 
 		for file in /vagrant/provision/*.sh; do
+			echo
+			echo
+			echo === $file
 			. $file
 		done
 

@@ -4,7 +4,7 @@ version=10.16.2
 
 url=https://nodejs.org/dist/v$version/node-v$version-linux-x64.tar.xz
 
-echo === Node - $url
+echo $url
 mkdir -p /usr/lib/node
 
 curl -L $url 2> /dev/null | tar xJ -C /usr/lib/node

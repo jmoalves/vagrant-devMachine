@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo === Google Cloud SDK
-
 # Create environment variable for correct distribution
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 

@@ -6,7 +6,7 @@ sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
 
 url="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-06/R/eclipse-jee-2019-06-R-linux-gtk-x86_64.tar.gz&r=1"
 
-echo === Eclipse - $url
+echo $url
 curl -L "$url" 2> /dev/null | tar xz -C /usr/lib/eclipse
 
 cd /usr/lib/eclipse

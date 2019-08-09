@@ -3,7 +3,7 @@
 version=1.17.3
 url=https://github.com/yarnpkg/yarn/releases/download/v$version/yarn-v$version.tar.gz
 
-echo === Yarn - $url
+echo $url
 mkdir -p /usr/lib/yarn
 
 curl -L $url 2> /dev/null | tar xz -C /usr/lib/yarn

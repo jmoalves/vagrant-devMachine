@@ -3,7 +3,7 @@
 version=3.6.1
 url=https://www-us.apache.org/dist/maven/maven-3/$version/binaries/apache-maven-$version-bin.tar.gz
 
-echo === Maven - $url
+echo $url
 
 mkdir -p /usr/lib/maven
 curl -L $url 2> /dev/null | tar xz -C /usr/lib/maven
