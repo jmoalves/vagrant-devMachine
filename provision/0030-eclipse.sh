@@ -2,6 +2,9 @@
 
 url="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-06/R/eclipse-jee-2019-06-R-linux-gtk-x86_64.tar.gz&r=1"
 
+sudo -iu vagrant mkdir -p /media/sf_storage/eclipse-workspace
+sudo -iu vagrant ln -s /media/sf_storage/eclipse-workspace ~vagrant/
+
 # Dependencies
 sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
 
