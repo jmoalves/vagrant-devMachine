@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=10.16.2
+version=10.16.3
 
 url=https://nodejs.org/dist/v$version/node-v$version-linux-x64.tar.xz
 
