@@ -29,8 +29,8 @@ Vagrant.configure("2") do |config|
 		sudo apt-get -y upgrade
 
 		echo
-		echo === Gedit + X-Windows
-		sudo apt-get -y install gedit
+		echo === Gedit + Firefox + X-Windows
+		sudo apt-get -y install gedit firefox 
 
 		for file in /vagrant/provision/*.sh; do
 			echo
