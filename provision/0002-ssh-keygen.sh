@@ -7,7 +7,10 @@ if [ ! -f ~vagrant/.stable_ssh_keys/id_rsa.pub ]; then
     yes "" | sudo -u vagrant ssh-keygen -t rsa -N '' -f ~vagrant/.stable_ssh_keys/id_rsa
 fi
 
-<< EOF > ~/.ssh/config
+sudo -u vagrant echo "
 host *
-    IdentityFile ~vagrant/.stable_ssh_keys/id_rsa.pub
-EOF
+    IdentityFile ~/.stable_ssh_keys/id_rsa
+" > ~vagrant/.ssh/config
+
+chown vagrant.vagrant ~vagrant/.ssh/config
+chmod 400 ~vagrant/.ssh/config
