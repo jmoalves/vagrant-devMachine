@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo -iu vagrant npm add -g ionic cordova
+npm -g install ionic cordova
