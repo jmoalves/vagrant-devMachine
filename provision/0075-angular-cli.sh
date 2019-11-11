@@ -1,3 +1,4 @@
 #!/bin/bash
 
-npm -g install @angular/cli
+sudo -iu vagrant yarn global add @angular/cli
+sudo -iu vagrant ng config -g cli.packageManager yarn

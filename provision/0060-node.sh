@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# Ionic does not support this version yet
-#version=12.13.0
-version=10.17.0
+version=12.13.0
 
 url=https://nodejs.org/dist/v$version/node-v$version-linux-x64.tar.xz
 
