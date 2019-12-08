@@ -11,7 +11,8 @@ sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
 mkdir -p /usr/lib/eclipse
 
 echo $url
-curl -L "$url" 2> /dev/null | tar xz -C /usr/lib/eclipse
+curl -L --output /tmp/eclipse.tar.gz "$url" 
+tar xvzf /tmp/eclipse.tar.gz -C /usr/lib/eclipse
 
 cd /usr/lib/eclipse
 ln -s $( ls -1d eclipse* | tail -1 ) latest
