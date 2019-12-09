@@ -6,7 +6,7 @@ url=https://github.com/yarnpkg/yarn/releases/download/v$version/yarn-v$version.t
 echo $url
 mkdir -p /usr/lib/yarn
 
-curl -L $url 2> /dev/null | tar xz -C /usr/lib/yarn
+curl -L $url 2> /dev/null | gunzip | tar x -C /usr/lib/yarn
 
 cd /usr/lib/yarn
 ln -s $( ls -1d yarn-* | tail -1 ) latest
