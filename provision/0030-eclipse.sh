@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #url="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-09/R/eclipse-jee-2019-09-R-linux-gtk-x86_64.tar.gz&mirror_id=576"
-url="http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/2019-09/R/eclipse-jee-2019-09-R-linux-gtk-x86_64.tar.gz"
+#url="http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/2019-09/R/eclipse-jee-2019-09-R-linux-gtk-x86_64.tar.gz"
+url="http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/2019-12/R/eclipse-jee-2019-12-R-linux-gtk-x86_64.tar.gz"
 
 sudo -iu vagrant mkdir -p /media/sf_storage/eclipse-workspace
 sudo -iu vagrant ln -s /media/sf_storage/eclipse-workspace ~vagrant/

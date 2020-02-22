@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=1.19.2
+version=1.22.0
 url=https://github.com/yarnpkg/yarn/releases/download/v$version/yarn-v$version.tar.gz
 
 echo $url
