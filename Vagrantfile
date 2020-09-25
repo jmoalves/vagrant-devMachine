@@ -7,8 +7,8 @@ Vagrant.configure("2") do |config|
 
 	config.vm.provider :virtualbox do |vb|
 		vb.name = "vagrant-dev"
-		vb.memory = 8192
-  		vb.cpus = 4
+		vb.memory = 6144
+  		vb.cpus = 2
 		vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
 	end
 
