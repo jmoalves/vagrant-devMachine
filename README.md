@@ -25,17 +25,20 @@ What's inside?
 I've create this machine to be my primary development machine.
 
 All the items are listed in the ``provision`` directory. Here follows a sample list:
-* Java SE JDK 11
+* Java SE JDK 17
 * Visual Studio Code
 * Eclipse Java EE Edition
 * Maven
 * JQ
+* Deno
 * Google Cloud SDK
 * Node.js
 * Yarn
 * Ionic
+* KNIME
+* Python 3.9
 
-I've used an ``ubuntu-bionic64`` machine as base. I've also chosen the ``VirtualBox`` provider.
+I've used an ``ubuntu-focal64`` machine as base. I've also chosen the ``VirtualBox`` provider.
 
 However, it should be easy to change these choices. I plan to test it using AWS provider.
 
@@ -59,4 +62,4 @@ Explaining some decisions
 ### Public network
 I choose the public network because the testing process is easier. Otherwise, the dev machine would have to forward some ports for the running applications.
 
-However, keep in mind that vagrant machines are unsecure by nature. Don't expose them to the real world. Make them public but inside your protected network.
+However, keep in mind that vagrant machines are **unsecure by nature**. Don't expose them to the real world. Make them public but inside your protected network.
