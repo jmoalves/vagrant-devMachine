@@ -31,9 +31,14 @@ Vagrant.configure("2") do |config|
 
 			if [ ! -e $doneFile ]; then
 				echo
-				echo === $file
+				echo === BEG $file
+				begFile=$( date "+%s" )
 				if . $file; then
 					touch $doneFile
+
+					endFile=$( date "+%s" )
+					echo === END $file - $( expr $endFile - $begFile ) s
+					echo
 				else
 					echo
 					echo === FAILED $file
