@@ -17,5 +17,6 @@ echo '#!/bin/bash
 PATH=/usr/lib/node/latest/bin:$PATH
 export PATH
 ' > /etc/profile.d/node.sh
+chmod a+x /etc/profile.d/node.sh
 
 . /etc/profile.d/node.sh

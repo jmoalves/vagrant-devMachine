@@ -24,10 +24,12 @@ echo '#!/bin/bash
 myDir=$( dirname "$0" )
 java -jar $myDir/weka.jar "$@"
 ' > /usr/lib/weka/latest/weka.sh
+chmod a+x /usr/lib/weka/latest/weka.sh
 
 echo '#!/bin/bash
 PATH=/usr/lib/weka/latest:$PATH
 export PATH
 ' > /etc/profile.d/weka.sh
+chmod a+x /etc/profile.d/weka.sh
 
 . /etc/profile.d/weka.sh

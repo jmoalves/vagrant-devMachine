@@ -18,5 +18,6 @@ export PATH
 PATH=$( yarn global bin ):$PATH
 export PATH
 ' > /etc/profile.d/yarn.sh
+chmod a+x /etc/profile.d/yarn.sh
 
 . /etc/profile.d/yarn.sh

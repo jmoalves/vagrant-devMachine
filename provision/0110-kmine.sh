@@ -21,5 +21,6 @@ echo '#!/bin/bash
 PATH=/usr/lib/knime/latest:$PATH
 export PATH
 ' > /etc/profile.d/knime.sh
+chmod a+x /etc/profile.d/knime.sh
 
 . /etc/profile.d/knime.sh

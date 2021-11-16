@@ -14,5 +14,6 @@ echo '#!/bin/bash
 PATH=/usr/lib/deno:$PATH
 export PATH
 ' > /etc/profile.d/deno.sh
+chmod a+x /etc/profile.d/deno.sh
 
 . /etc/profile.d/deno.sh

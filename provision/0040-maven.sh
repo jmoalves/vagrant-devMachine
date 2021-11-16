@@ -17,5 +17,6 @@ MAVEN_HOME=/usr/lib/maven/latest
 PATH=$MAVEN_HOME/bin:$PATH
 export MAVEN_HOME PATH
 ' > /etc/profile.d/maven.sh
+chmod a+x /etc/profile.d/maven.sh
 
 . /etc/profile.d/maven.sh
