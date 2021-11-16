@@ -1,14 +1,10 @@
 #!/bin/bash
 
-# Create environment variable for correct distribution
-export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+sudo apt-get install -y apt-transport-https ca-certificates gnupg
 
-# Add the Cloud SDK distribution URI as a package source
-echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 
-# Import the Google Cloud Platform public key
-curl -L https://packages.cloud.google.com/apt/doc/apt-key.gpg 2>/dev/null | sudo apt-key add -
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 
-# Update the package list and install the Cloud SDK
 sudo apt-get update -y && sudo apt-get install -y google-cloud-sdk
 
