@@ -13,7 +13,7 @@ mkdir -p /usr/lib/weka
 
 tmpFile=$( mktemp )
 curl -L $url -o $tmpFile 2> /dev/null
-unzip $tmpFile -d /usr/lib/weka
+unzip -q $tmpFile -d /usr/lib/weka
 rm $tmpFile
 
 cd /usr/lib/weka

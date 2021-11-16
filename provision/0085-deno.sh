@@ -7,7 +7,7 @@ echo $url
 
 tmpFile=$( mktemp )
 curl -L $url -o $tmpFile 2> /dev/null
-unzip $tmpFile -d /usr/lib
+unzip -q $tmpFile -d /usr/lib
 rm $tmpFile
 
 echo '#!/bin/bash
