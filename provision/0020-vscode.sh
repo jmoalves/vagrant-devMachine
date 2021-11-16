@@ -8,7 +8,7 @@ rm -f /tmp/vscode.deb
 
 ### Extensions
 
-code --force \
+sudo -iu vagrant code --force \
     --install-extension vscjava.vscode-java-pack \
     --install-extension ms-azuretools.vscode-docker \
     --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
