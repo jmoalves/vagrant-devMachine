@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
 		vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
 	end
 
+	config.vm.boot_timeout = 600
 	config.vm.provision "shell", inline: <<-SCRIPT
 		if [ ! -d /vagrant/provision ]; then
 			echo Provision dir NOT FOUND - /vagrant/provision
