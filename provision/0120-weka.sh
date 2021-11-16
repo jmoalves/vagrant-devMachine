@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url=https://prdownloads.sourceforge.net/weka/weka-3-8-5.zip
+url=https://prdownloads.sourceforge.net/weka/weka-3-9-5.zip
 
 sudo -iu vagrant mkdir -p /media/sf_storage/weka-workspace
 sudo -iu vagrant ln -s /media/sf_storage/weka-workspace ~vagrant/
