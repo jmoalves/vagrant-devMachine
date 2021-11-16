@@ -13,16 +13,30 @@ Vagrant.configure("2") do |config|
 	end
 
 	config.vm.provision "shell", inline: <<-SCRIPT
+		if [ ! -d /vagrant/provision ]; then
+			echo Provision dir NOT FOUND - /vagrant/provision
+			echo
+			exit 1
+		fi
+
 		mkdir -p ~/provision
 
 		for file in /vagrant/provision/*.sh; do
-			doneFile=$( echo $file | sed "s@/@_@/g" ).done
+			doneFile=~/provision/$( echo $file | sed "s@/@_@g" ).done
+
 			if [ ! -e $doneFile ]; then
 				echo
 				echo === $file
-				. $file
-
-				touch $doneFile
+				if . $file; then
+					touch $doneFile
+				else
+					echo
+					echo === FAILED $file
+					echo
+					exit 1
+				fi
+			else
+				echo === FOUND $doneFile
 			fi
 		done
 

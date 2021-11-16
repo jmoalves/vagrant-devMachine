@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url="https://download.knime.org/analytics-platform/linux/knime-latest-linux.gtk.x86_64.tar.gz"
+url=https://download.knime.org/analytics-platform/linux/knime-latest-linux.gtk.x86_64.tar.gz
 
 sudo -iu vagrant mkdir -p /media/sf_storage/knime-workspace
 sudo -iu vagrant ln -s /media/sf_storage/knime-workspace ~vagrant/
