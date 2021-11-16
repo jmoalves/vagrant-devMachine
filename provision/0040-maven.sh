@@ -1,7 +1,7 @@
 #!/bin/bash
 
 version=3.8.3
-url=https://www-us.apache.org/dist/maven/maven-3/$version/binaries/apache-maven-$version-bin.tar.gz
+url=https://dlcdn.apache.org/maven/maven-3/${version}/binaries/apache-maven-${version}-bin.tar.gz
 
 echo $url
 
