@@ -19,6 +19,11 @@ Vagrant.configure("2") do |config|
 			exit 1
 		fi
 
+		begin=$( date "+%s" )
+		echo
+		echo PROVISION - BEG - $( date "+%Y%m%d-%H%M%S" )
+		echo ============================================================
+
 		mkdir -p ~/provision
 
 		for file in /vagrant/provision/*.sh; do
@@ -39,6 +44,11 @@ Vagrant.configure("2") do |config|
 				echo === FOUND $doneFile
 			fi
 		done
+
+		end=$( date "+%s" )
+		echo
+		echo ============================================================
+		echo PROVISION - END - $( date "+%Y%m%d-%H%M%S" ) - $( expr $end - $begin ) s
 
 		echo
 		echo === REBOOT
