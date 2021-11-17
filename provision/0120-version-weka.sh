@@ -8,10 +8,15 @@ if [ -z "$provUser" ]; then
 fi
 homeDir=$( grep "^$provUser" /etc/passwd | cut -d ":" -f6 )
 
-url=https://prdownloads.sourceforge.net/weka/weka-3-9-5.zip
+url=https://prdownloads.sourceforge.net/weka/weka-3-9-5-azul-zulu-linux.zip
 
-sudo -iu $provUser mkdir -p /media/sf_storage/weka-workspace
-sudo -iu $provUser ln -s /media/sf_storage/weka-workspace $homeDir/
+if [ ! -e /media/sf_storage/weka-workspace ]; then
+    sudo -iu $provUser mkdir -p /media/sf_storage/weka-workspace
+fi
+
+if [ ! -e $homeDir/weka-workspace ]; then
+    sudo -iu $provUser ln -s /media/sf_storage/weka-workspace $homeDir/
+fi
 
 # Dependencies
 #sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
@@ -27,12 +32,6 @@ rm $tmpFile
 cd /usr/lib/weka
 ln -s $( ls -1d weka* | tail -1 ) latest
 cd - > /dev/null
-
-echo '#!/bin/bash
-myDir=$( dirname "$0" )
-java -jar $myDir/weka.jar "$@"
-' > /usr/lib/weka/latest/weka.sh
-chmod a+x /usr/lib/weka/latest/weka.sh
 
 echo '#!/bin/bash
 PATH=/usr/lib/weka/latest:$PATH
