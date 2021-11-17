@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get -y install curl grep
+
 nexusRepo=http://192.168.15.200:8081/repository/ubuntu-focal/
 nexusStatus=$( curl -o /dev/null -s -w "%{http_code}\n" ${nexusRepo} )	
 if [ $nexusStatus == 200 ]; then
