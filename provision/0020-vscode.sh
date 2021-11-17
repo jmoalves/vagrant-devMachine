@@ -2,7 +2,7 @@
 
 provUser=$1
 if [ -z "$provUser" ]; then
-    echo Informe the provisionning user
+    echo Inform the provisioning user
     echo
     exit 1
 fi
