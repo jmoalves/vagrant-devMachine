@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
 	config.vm.box = "ubuntu/focal64"
-	config.vm.network "public_network"
+	#config.vm.network "public_network"
 	config.ssh.forward_x11 = true
 
 	config.vbguest.auto_update = true
@@ -11,7 +11,20 @@ Vagrant.configure("2") do |config|
 		vb.name = "vagrant-dev"
 		vb.memory = 8192
   		vb.cpus = 4
-		vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+		vb.gui = true
+
+		vb.customize ["modifyvm", :id, 
+			"--clipboard", "bidirectional", 
+			"--draganddrop", "bidirectional",
+			"--graphicscontroller", "vmsvga"
+		]
+
+		vb.customize ["storageattach", :id, 
+			"--storagectl", "IDE", 
+			"--port", "0", "--device", "0", 
+			"--type", "dvddrive", 
+			"--medium", "emptydrive"
+		]
 	end
 
 	config.vm.boot_timeout = 600
