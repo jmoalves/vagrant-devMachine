@@ -22,7 +22,7 @@ You may want to add the ``vagrant`` user ssh key to your git repository of choic
 What's inside?
 --------------
 
-I've create this machine to be my primary development machine.
+I've created this machine to be my primary development machine.
 
 All the items are listed in the ``provision`` directory. Here follows a sample list:
 * Java SE JDK 17
