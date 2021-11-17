@@ -6,7 +6,7 @@ if [ -z "$provUser" ]; then
     echo
     exit 1
 fi
-homeDir=~$provUser
+homeDir=$( grep "^$provUser" /etc/passwd | cut -d ":" -f6 )
 
 url=https://prdownloads.sourceforge.net/weka/weka-3-9-5.zip
 

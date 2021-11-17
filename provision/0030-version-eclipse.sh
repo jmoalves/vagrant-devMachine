@@ -6,7 +6,7 @@ if [ -z "$provUser" ]; then
     echo
     exit 1
 fi
-homeDir=~$provUser
+homeDir=$( grep "^$provUser" /etc/passwd | cut -d ":" -f6 )
 
 eclipseVersion=2021-09
 

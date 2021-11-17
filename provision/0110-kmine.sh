@@ -6,7 +6,7 @@ if [ -z "$provUser" ]; then
     echo
     exit 1
 fi
-homeDir=~$provUser
+homeDir=$( grep "^$provUser" /etc/passwd | cut -d ":" -f6 )
 
 url=https://download.knime.org/analytics-platform/linux/knime-latest-linux.gtk.x86_64.tar.gz
 

@@ -6,7 +6,7 @@ if [ -z "$provUser" ]; then
     echo
     exit 1
 fi
-homeDir=~$provUser
+homeDir=$( grep "^$provUser" /etc/passwd | cut -d ":" -f6 )
 
 sudo usermod -aG vboxsf $provUser
 sudo -iu $provUser mkdir -p /media/sf_storage/workspace
