@@ -1,5 +1,12 @@
 #!/bin/bash
 
-sudo -iu vagrant yarn global add @ionic/cli cordova
-sudo -iu vagrant ionic config set -g yarn true
-sudo -iu vagrant ionic config set -g npmClient yarn
+provUser=$1
+if [ -z "$provUser" ]; then
+    echo Informe the provisionning user
+    echo
+    exit 1
+fi
+
+sudo -iu $provUser yarn global add @ionic/cli cordova
+sudo -iu $provUser ionic config set -g yarn true
+sudo -iu $provUser ionic config set -g npmClient yarn

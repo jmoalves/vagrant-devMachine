@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
 	end
 
 	config.vm.provision "shell", inline: <<-SCRIPT
-		. /vagrant/provision.sh
+		. /vagrant/provision.sh vagrant
 
 		echo
 		echo === REBOOT

@@ -8,6 +8,13 @@ if [ ! -d $provDir ]; then
     exit 1
 fi
 
+provUser=$1
+if [ -z "$provUser" ]; then
+    echo Informe the provisionning user
+    echo
+    exit 1
+fi
+
 begin=$( date "+%s" )
 echo
 echo PROVISION - BEG - $( date "+%Y%m%d-%H%M%S" )
@@ -22,7 +29,7 @@ for file in $provDir/*.sh; do
         echo
         echo === BEG $file
         begFile=$( date "+%s" )
-        if . $file; then
+        if . $file $provUser; then
             touch $doneFile
 
             endFile=$( date "+%s" )

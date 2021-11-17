@@ -1,11 +1,18 @@
 #!/bin/bash
 
+provUser=$1
+if [ -z "$provUser" ]; then
+    echo Informe the provisionning user
+    echo
+    exit 1
+fi
+
 eclipseVersion=2021-09
 
 url=http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/${eclipseVersion}/R/eclipse-jee-${eclipseVersion}-R-linux-gtk-x86_64.tar.gz
 
-sudo -iu vagrant mkdir -p /media/sf_storage/eclipse-workspace
-sudo -iu vagrant ln -s /media/sf_storage/eclipse-workspace ~vagrant/
+sudo -iu $provUser mkdir -p /media/sf_storage/eclipse-workspace
+sudo -iu $provUser ln -s /media/sf_storage/eclipse-workspace ~$provUser/
 
 # Dependencies
 sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module

@@ -1,9 +1,16 @@
 #!/bin/bash
 
+provUser=$1
+if [ -z "$provUser" ]; then
+    echo Informe the provisionning user
+    echo
+    exit 1
+fi
+
 url=https://prdownloads.sourceforge.net/weka/weka-3-9-5.zip
 
-sudo -iu vagrant mkdir -p /media/sf_storage/weka-workspace
-sudo -iu vagrant ln -s /media/sf_storage/weka-workspace ~vagrant/
+sudo -iu $provUser mkdir -p /media/sf_storage/weka-workspace
+sudo -iu $provUser ln -s /media/sf_storage/weka-workspace ~$provUser/
 
 # Dependencies
 #sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module

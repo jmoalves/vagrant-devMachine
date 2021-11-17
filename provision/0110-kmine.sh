@@ -1,9 +1,16 @@
 #!/bin/bash
 
+provUser=$1
+if [ -z "$provUser" ]; then
+    echo Informe the provisionning user
+    echo
+    exit 1
+fi
+
 url=https://download.knime.org/analytics-platform/linux/knime-latest-linux.gtk.x86_64.tar.gz
 
-sudo -iu vagrant mkdir -p /media/sf_storage/knime-workspace
-sudo -iu vagrant ln -s /media/sf_storage/knime-workspace ~vagrant/
+sudo -iu $provUser mkdir -p /media/sf_storage/knime-workspace
+sudo -iu $provUser ln -s /media/sf_storage/knime-workspace ~$provUser/
 
 # Dependencies
 sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
