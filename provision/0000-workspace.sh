@@ -6,7 +6,8 @@ if [ -z "$provUser" ]; then
     echo
     exit 1
 fi
+homeDir=~$provUser
 
 sudo usermod -aG vboxsf $provUser
 sudo -iu $provUser mkdir -p /media/sf_storage/workspace
-sudo -iu $provUser ln -s /media/sf_storage/workspace ~$provUser/
+sudo -iu $provUser ln -s /media/sf_storage/workspace $homeDir/

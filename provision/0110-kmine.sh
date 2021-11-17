@@ -6,11 +6,12 @@ if [ -z "$provUser" ]; then
     echo
     exit 1
 fi
+homeDir=~$provUser
 
 url=https://download.knime.org/analytics-platform/linux/knime-latest-linux.gtk.x86_64.tar.gz
 
 sudo -iu $provUser mkdir -p /media/sf_storage/knime-workspace
-sudo -iu $provUser ln -s /media/sf_storage/knime-workspace ~$provUser/
+sudo -iu $provUser ln -s /media/sf_storage/knime-workspace $homeDir/
 
 # Dependencies
 sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
