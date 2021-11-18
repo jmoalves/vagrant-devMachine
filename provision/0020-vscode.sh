@@ -18,4 +18,6 @@ rm -f /tmp/vscode.deb
 sudo -iu $provUser code --force \
     --install-extension vscjava.vscode-java-pack \
     --install-extension ms-azuretools.vscode-docker \
-    --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+    --install-extension ms-kubernetes-tools.vscode-kubernetes-tools \
+    --install-extension dotjoshjohnson.xml
+    --install-extension redhat.vscode-xml
