@@ -6,7 +6,7 @@ url=https://github.com/yarnpkg/yarn/releases/download/v$version/yarn-v$version.t
 echo $url
 mkdir -p /usr/lib/yarn
 
-if ! curl -L $url 2> /dev/null | tar -xzC /usr/lib/yarn; technology
+if ! curl -L $url 2> /dev/null | tar -xzC /usr/lib/yarn; then
     exit 1
 fi
 
