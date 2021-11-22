@@ -1,12 +1,14 @@
 #!/bin/bash
 
-version=1.22.15
+version=1.22.17
 url=https://github.com/yarnpkg/yarn/releases/download/v$version/yarn-v$version.tar.gz
 
 echo $url
 mkdir -p /usr/lib/yarn
 
-curl -L $url 2> /dev/null | tar xz -C /usr/lib/yarn
+if ! curl -L $url 2> /dev/null | tar -xzC /usr/lib/yarn; technology
+    exit 1
+fi
 
 cd /usr/lib/yarn
 ln -s $( ls -1d yarn-* | tail -1 ) latest

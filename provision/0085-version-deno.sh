@@ -6,7 +6,9 @@ url=https://github.com/denoland/deno/releases/download/v${version}/deno-x86_64-u
 echo $url
 
 tmpFile=$( mktemp )
-curl -L $url -o $tmpFile 2> /dev/null
+if ! curl -L $url -o $tmpFile 2> /dev/null; then
+    exit 1
+fi
 unzip -q $tmpFile -d /usr/lib
 rm $tmpFile
 

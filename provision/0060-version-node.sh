@@ -7,7 +7,9 @@ url=https://nodejs.org/dist/v$version/node-v$version-linux-x64.tar.xz
 echo $url
 mkdir -p /usr/lib/node
 
-curl -L $url 2> /dev/null | xz --decompress --stdout | tar x -C /usr/lib/node
+if ! curl -L $url 2> /dev/null | xz --decompress --stdout | tar -xC /usr/lib/node; then
+    exit 1
+fi
 
 cd /usr/lib/node
 ln -s $( ls -1d node-* | tail -1 ) latest

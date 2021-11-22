@@ -12,8 +12,13 @@ eclipseVersion=2021-09
 
 url=http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/${eclipseVersion}/R/eclipse-jee-${eclipseVersion}-R-linux-gtk-x86_64.tar.gz
 
-sudo -iu $provUser mkdir -p /media/sf_storage/eclipse-workspace
-sudo -iu $provUser ln -s /media/sf_storage/eclipse-workspace $homeDir/
+if [ ! -e /media/sf_storage/eclipse-workspace ]; then
+    sudo -iu $provUser mkdir -p /media/sf_storage/eclipse-workspace
+fi
+
+if [ ! -e $homeDir/eclipse-workspace ]; then
+    sudo -iu $provUser ln -s /media/sf_storage/eclipse-workspace $homeDir/
+fi
 
 # Dependencies
 sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
@@ -21,7 +26,9 @@ sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
 mkdir -p /usr/lib/eclipse
 
 echo $url
-curl -L "$url" 2> /dev/null | tar xz -C /usr/lib/eclipse
+if ! curl -L "$url" 2> /dev/null | tar -xzC /usr/lib/eclipse; then
+    exit 1
+fi
 
 cd /usr/lib/eclipse
 ln -s $( ls -1d eclipse* | tail -1 ) latest

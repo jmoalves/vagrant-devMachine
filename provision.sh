@@ -23,7 +23,7 @@ echo ============================================================
 mkdir -p ~/provision
 
 for file in $provDir/*.sh; do
-    doneFile=~/provision/$( echo $file | sed "s@/@_@g" ).done
+    doneFile=~/provision/$( basename $file ).done
 
     if [ ! -e $doneFile ]; then
         echo

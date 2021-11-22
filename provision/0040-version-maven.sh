@@ -1,12 +1,14 @@
 #!/bin/bash
 
-version=3.8.3
+version=3.8.4
 url=https://dlcdn.apache.org/maven/maven-3/${version}/binaries/apache-maven-${version}-bin.tar.gz
 
 echo $url
 
 mkdir -p /usr/lib/maven
-curl -L $url 2> /dev/null | tar xz -C /usr/lib/maven
+if ! curl -L $url 2> /dev/null | tar -xzC /usr/lib/maven; then
+    exit 1
+fi
 
 cd /usr/lib/maven
 ln -s $( ls -1d apache-maven-* | tail -1 ) latest

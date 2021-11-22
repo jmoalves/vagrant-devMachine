@@ -10,8 +10,13 @@ homeDir=$( grep "^$provUser" /etc/passwd | cut -d ":" -f6 )
 
 url=https://download.knime.org/analytics-platform/linux/knime-latest-linux.gtk.x86_64.tar.gz
 
-sudo -iu $provUser mkdir -p /media/sf_storage/knime-workspace
-sudo -iu $provUser ln -s /media/sf_storage/knime-workspace $homeDir/
+if [ ! -e /media/sf_storage/knime-workspace ]; then
+    sudo -iu $provUser mkdir -p /media/sf_storage/knime-workspace
+fi
+
+if [ ! -e $homeDir/knime-workspace ]; then
+    sudo -iu $provUser ln -s /media/sf_storage/knime-workspace $homeDir/
+fi
 
 # Dependencies
 sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
@@ -19,7 +24,9 @@ sudo apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
 mkdir -p /usr/lib/knime
 
 echo $url
-curl -L "$url" 2> /dev/null | tar xz -C /usr/lib/knime
+if ! curl -L "$url" 2> /dev/null | tar -xzC /usr/lib/knime; then
+    exit 1
+fi
 
 cd /usr/lib/knime
 ln -s $( ls -1d knime* | tail -1 ) latest

@@ -25,7 +25,9 @@ echo $url
 mkdir -p /usr/lib/weka
 
 tmpFile=$( mktemp )
-curl -L $url -o $tmpFile 2> /dev/null
+if ! curl -L $url -o $tmpFile 2> /dev/null; then
+    exit 1
+fi
 unzip -q $tmpFile -d /usr/lib/weka
 rm $tmpFile
 

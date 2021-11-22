@@ -14,8 +14,11 @@ if [ ! -d $homeDir/.ssh ]; then
     chmod 700 $homeDir/.ssh
 fi
 
-if [ ! -e $homeDir/.stable_ssh_keys ]; then
+if [ ! -e /media/sf_storage/.stable_ssh_keys ]; then
     sudo -iu $provUser mkdir -p /media/sf_storage/.stable_ssh_keys
+fi
+
+if [ ! -e $homeDir/.stable_ssh_keys ]; then
     sudo -iu $provUser ln -s /media/sf_storage/.stable_ssh_keys $homeDir/.stable_ssh_keys
 fi
 
