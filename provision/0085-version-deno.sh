@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=1.16.1
+version=1.16.2
 url=https://github.com/denoland/deno/releases/download/v${version}/deno-x86_64-unknown-linux-gnu.zip
 
 echo $url
