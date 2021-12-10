@@ -9,6 +9,7 @@ fi
 homeDir=$( grep "^$provUser" /etc/passwd | cut -d ":" -f6 )
 
 url=https://download.knime.org/analytics-platform/linux/knime-latest-linux.gtk.x86_64.tar.gz
+# Windows - https://download.knime.org/analytics-platform/win/knime-latest-win32.win32.x86_64.zip
 
 if [ ! -e /media/sf_storage/knime-workspace ]; then
     sudo -iu $provUser mkdir -p /media/sf_storage/knime-workspace
