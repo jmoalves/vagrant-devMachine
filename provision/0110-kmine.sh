@@ -29,10 +29,18 @@ if ! curl -L "$url" 2> /dev/null | tar -xzC /usr/lib/knime; then
     exit 1
 fi
 
+# KNIME latest
 cd /usr/lib/knime
 ln -s $( ls -1d knime* | tail -1 ) latest
 cd - > /dev/null
 
+# Config - INI
+cp /usr/lib/knime/latest/knime.ini /usr/lib/knime/latest/knime.ini.bkp
+cat /usr/lib/knime/latest/knime.ini.bkp \
+    | sed "s/-Xmx.*m/-Xmx6144m/g" \
+    > /usr/lib/knime/latest/knime.ini
+
+# Desktop entry
 echo '[Desktop Entry]
 Name=KNIME Analytics Platform 
 GenericName=KNIME
@@ -46,6 +54,7 @@ Keywords=knime;
 
 cp /usr/lib/knime/latest/knime.desktop /usr/share/applications/
 
+# PATH
 echo '#!/bin/bash
 PATH=/usr/lib/knime/latest:$PATH
 export PATH
