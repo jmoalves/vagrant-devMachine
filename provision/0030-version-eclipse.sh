@@ -8,7 +8,7 @@ if [ -z "$provUser" ]; then
 fi
 homeDir=$( grep "^$provUser" /etc/passwd | cut -d ":" -f6 )
 
-eclipseVersion=2021-09
+eclipseVersion=2021-12
 
 url=http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/${eclipseVersion}/R/eclipse-jee-${eclipseVersion}-R-linux-gtk-x86_64.tar.gz
 
