@@ -33,6 +33,19 @@ cd /usr/lib/knime
 ln -s $( ls -1d knime* | tail -1 ) latest
 cd - > /dev/null
 
+echo '[Desktop Entry]
+Name=KNIME Analytics Platform 
+GenericName=KNIME
+Exec=/usr/lib/knime/latest/knime
+Icon=/usr/lib/knime/latest/icon.xpm
+Type=Application
+Categories=Utility;TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;
+Keywords=knime;
+' > /usr/lib/knime/latest/knime.desktop
+
+cp /usr/lib/knime/latest/knime.desktop /usr/share/applications/
+
 echo '#!/bin/bash
 PATH=/usr/lib/knime/latest:$PATH
 export PATH
